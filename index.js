@@ -32,17 +32,16 @@ const getListOfYearFromEmails = (N, arr) => {
 
 // Find last word of the string
 var lengthOfLastWord = function (s) {
-  console.log('before reverse', s);
-
   const str = s.split(' ').reverse().join(' ').trimStart();
-
+  console.log('str', s.split(' ').reverse().join(' ').trimStart());
   let count = 0;
   for (let i = 0; i < str.length; i++) {
     if (!str[i].indexOf(' ') >= 0) {
       count += 1;
-    } else {
-      return count;
+    }else{
+      break
     }
   }
+  return count;
 };
 console.log('length of the last word', lengthOfLastWord('Hello World'));
