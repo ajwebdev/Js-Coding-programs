@@ -38,10 +38,36 @@ var lengthOfLastWord = function (s) {
   for (let i = 0; i < str.length; i++) {
     if (!str[i].indexOf(' ') >= 0) {
       count += 1;
-    }else{
-      break
+    } else {
+      break;
     }
   }
   return count;
 };
 console.log('length of the last word', lengthOfLastWord('Hello World'));
+
+// reverse a string
+
+function reverseWords(string) {
+  const str = string.trim();
+  /* return str.split(' ').reverse().join(' ') */
+  const newArr = [];
+  let newStr = '';
+  for (let i = 0; i < str.length; i++) {
+    console.log(
+      'if checker',
+      str[i],
+      str.length - 1,
+      str[i] === ' ',
+      i === str.length - 1
+    );
+    if (str[i] === ' ' || i === str.length - 1) {
+      newArr.push(newStr);
+      newStr = '';
+    } else {
+      newStr += str[i];
+    }
+  }
+  return newArr;
+}
+console.log('reverseWords', reverseWords('Ajith Kumar'));
